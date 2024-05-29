@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "366342141425",
+    "project_id": "travel-27e7d",
+    "storage_bucket": "travel-27e7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366342141425:android:f8f43d19f6a5808d670050",
+        "android_client_info": {
+          "package_name": "com.travel.guru"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCizMUYk10uY87ZPuQUSIHYpDgZeSXu1no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
