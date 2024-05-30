@@ -1,20 +1,22 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:guru/Screens/register/logic/register_cubit.dart';
 import 'package:guru/core/component/custom_text_form_field.dart';
 import 'package:guru/core/utils/colors_app.dart';
 import 'package:guru/core/utils/custom_text_button.dart';
 import 'package:guru/core/utils/styles.dart';
+import 'package:guru/splash.dart';
 import 'package:image_picker/image_picker.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+class RegisterView extends StatefulWidget {
+  const RegisterView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<RegisterView> createState() => _LoginViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _LoginViewState extends State<RegisterView> {
   String _selectedUserType = '';
   final _birthdateController = TextEditingController();
   DateTime? _selectedDate;
@@ -131,7 +133,9 @@ class _LoginViewState extends State<LoginView> {
                               return 'Name must be at least 3 characters long';
                             }
                             return null;
-                          },),
+                          },
+                            controller: AddUserCubit().tourGuideNameController,
+                          ),
                           const SizedBox(height: 20),
                           Text("Phone number", style: Styles.font17GreyRegular(context),),
                           CustomTextFormField(hintText: "enter your Phone number", validator: (value) {
@@ -226,6 +230,7 @@ class _LoginViewState extends State<LoginView> {
                               }
                               return null;
                             },
+                            controller: AddUserCubit().tourGuideEmailController,
                           ),
                         const  SizedBox(height: 20),
                           Text(
@@ -302,6 +307,15 @@ class _LoginViewState extends State<LoginView> {
                               textStyle: Styles.font17GreyRegular(context),
                               backgroundColor: ColorsApp.primaryColor,
                               onPressed: () {
+                                AddUserCubit().addUserToFireStore();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const Splash();
+                                    },
+                                  ),
+                                );
                                 //validateThenDoAddDepartment(context);
                               },
                             ),

@@ -1,4 +1,4 @@
-import 'package:guru/Screens/login_view.dart';
+import 'package:guru/Screens/register/ui/register_view.dart';
 import 'package:guru/core/utils/colors_app.dart';
 import 'package:guru/onboarding_contents.dart';
 import 'package:guru/size_config.dart';
@@ -140,7 +140,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return const LoginView();
+                                      return const RegisterView();
                                     },
                                   ),
                                 );
